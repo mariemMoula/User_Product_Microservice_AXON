@@ -1,2 +1,2 @@
 ## The link to the config repo :
-https://github.com/mariemMoula/User-Product-Config-Repo.git
+https://github.com/mariemMoula/Config_Repo_User_Product_Microservice_AXON.git
