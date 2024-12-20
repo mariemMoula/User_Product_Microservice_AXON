@@ -1,0 +1,23 @@
+services:
+  prometheusContainer:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"  # Prometheus web UI
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - monitoring
+
+  grafanaContainer:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"  # Grafana web UI
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    networks:
+      - monitoring
+
+networks:
+  monitoring:
+    driver: bridge
