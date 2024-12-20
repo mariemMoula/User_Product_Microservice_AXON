@@ -18,6 +18,18 @@ services:
     networks:
       - monitoring
 
+
+  axonserver:
+    image: axoniq/axonserver
+    ports:
+      - "8024:8024"  # Axon Server web UI
+      - "8124:8124"  # Axon Server gRPC port
+    volumes:
+      - axonserver-data:/data
+      - axonserver-events:/eventdata
+    networks:
+      - monitoring
+
 networks:
   monitoring:
     driver: bridge
