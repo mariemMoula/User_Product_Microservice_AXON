@@ -10,5 +10,5 @@ spring:
         git:
           uri: https://github.com/mariemMoula/Config_Repo_User_Product_Microservice_AXON.git
           clone-on-start: true
-          search-paths: '{application}'#This is the path to the configuration files in the git repository which means that the configuration files are stored in the root of the repository.
+          search-paths: '{application}' #This is the path to the configuration files in the git repository which means that the configuration files are stored in the root of the repository.
           try-master-branch: false

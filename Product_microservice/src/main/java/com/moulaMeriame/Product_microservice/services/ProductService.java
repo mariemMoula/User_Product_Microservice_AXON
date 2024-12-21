@@ -19,7 +19,7 @@ public class ProductService {
     }
 
     // Retourne un produit par son ID
-    public Product getProductById(Long id) {
+    public Product getProductById(String id) {
         Optional<Product> optionalProduct = productRepository.findById(id);
         return optionalProduct.orElse(null); // Retourne null si le produit n'existe pas
     }
@@ -28,7 +28,7 @@ public class ProductService {
         return productRepository.save(product);
     }
 
-    public Product updateProduct(Long id, Product product) {
+    public Product updateProduct(String id, Product product) {
         if (productRepository.existsById(id)) {
             product.setId(id); // Assurez-vous que l'ID du produit est mis à jour
             return productRepository.save(product);
@@ -36,7 +36,7 @@ public class ProductService {
         return null; // Retourne null si le produit n'existe pas
     }
 
-    public boolean deleteProduct(Long id) {
+    public boolean deleteProduct(String id) {
         if (productRepository.existsById(id)) {
             productRepository.deleteById(id);
             return true; // Retourne vrai si la suppression réussit
